@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:ContactBook.ViewModels"
+                    xmlns:v="clr-namespace:ContactBook.Views"
+                    xmlns:helper="clr-namespace:ContactBook.Helpers">
+
+    <!-- Other -->
+    <DataTemplate DataType="{x:Type vm:BookViewModel}">
+        <v:BookView/>
+    </DataTemplate>
+
+    <BitmapImage x:Key="DefaultContactImage" UriSource="/Resouces/defaultContact.png"/>
+
+    <helper:BoolToVisibilityConverter x:Key="IsEditConverter"/>
+    <helper:NullToVisibilityConverter x:Key="SelectedContactConverter"/>
+
+    <!-- Controls -->
+    <Style x:Key="MenuTabButton" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource BlueGreyGradient}"/>
+        <Setter Property="Foreground" Value="{StaticResource Innuendo}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BlueHorizon}"/>
+        <Setter Property="BorderThickness" Value="0,0,1,0"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+
+    <Style x:Key="MenuIconButton" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource BlueGreyGradient}"/>
+        <Setter Property="Foreground" Value="{StaticResource MaximumBlueGreen}"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="DetailLabel" TargetType="Label">
+        <Setter Property="Foreground" Value="{StaticResource BlueGrey}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Padding" Value="1"/>
+    </Style>
+
+    <Style x:Key="ContentLabel" TargetType="Label">
+        <Setter Property="Foreground" Value="{StaticResource AlmostBlack}"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style x:Key="DetailBorder" TargetType="Border">
+        <Setter Property="CornerRadius" Value="3"/>
+        <Setter Property="Background" Value="{StaticResource LightBlueGreyGradient}"/>
+    </Style>
+</ResourceDictionary>
